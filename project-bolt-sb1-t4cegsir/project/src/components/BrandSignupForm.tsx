@@ -25,6 +25,12 @@ export default function BrandSignupForm() {
       return;
     }
 
+    if (!supabase) {
+      setStatus('error');
+      setErrorMessage('Sign-up is temporarily unavailable. Please try again later.');
+      return;
+    }
+
     setStatus('submitting');
     setErrorMessage('');
 
